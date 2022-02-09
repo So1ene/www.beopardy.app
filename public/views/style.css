@@ -23,8 +23,15 @@ input {
   justify-content: center;
 }
 
+.btn-buzzer {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
 .container {
-  width: 50%;
   text-align: center;
 }
 

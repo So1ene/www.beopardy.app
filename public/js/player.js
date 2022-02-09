@@ -29,7 +29,7 @@ const channelInstances = {
 window.copyCode = copyCode;
 window.startGame = startGame;
 window.endGame = endGame;
-window.fakeDeath = fakeDeath;
+window.clickBuzzer = clickBuzzer;
 
 document.addEventListener('keydown', move);
 
@@ -176,7 +176,7 @@ function handlePlayerStateUpdate(globalState, playerId) {
     };
   } else if (!isAlive && playerVars.localGameState[playerId].isAlive) {
     playerVars.localGameState[playerId].isAlive = false;
-    renderModule.updateGameNewsList(nickname, 'died');
+    renderModule.updateGameNewsList(nickname, 'clicked on the buzzer.');
     renderModule.blinkAndRemovePlayer(playerId);
   }
 }
@@ -243,7 +243,7 @@ function endGame() {
 
 // method to fake death
 // all players have this button
-function fakeDeath() {
+function clickBuzzer() {
   channelInstances.myPublishChannel.publish('player-dead', {
     deadPlayerId: playerVars.myClientId
   });
