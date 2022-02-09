@@ -1,6 +1,6 @@
 dependencies:
   ably: 1.2.17
-  dotenv: 8.6.0
+  dotenv: 15.0.1
   express: 4.17.2
 devDependencies:
   eslint: 7.32.0
@@ -646,12 +646,12 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
-  /dotenv/8.6.0:
+  /dotenv/15.0.1:
     dev: false
     engines:
-      node: '>=10'
+      node: '>=12'
     resolution:
-      integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
+      integrity: sha512-4OnbwRfzR+xQThp7uq1xpUS9fmgZ//njexOtPjPSbK3yHGrSHSJnaJRsXderSSm2elfvVj+Y5awDC0I8Oy8rkA==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -2524,8 +2524,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  ably: ^1.2.1
-  dotenv: ^8.2.0
+  ably: ^1.2.17
+  dotenv: ^15.0.1
   eslint: ^7.8.0
   eslint-config-google: ^0.14.0
   eslint-config-node: ^4.1.0
