@@ -178,6 +178,9 @@
          isGameOver = true;
        }
      });
+     playerChannel.subscribe('reset-buzzer', (msg) => {
+      //
+     });
    }
  }
  

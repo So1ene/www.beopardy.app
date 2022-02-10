@@ -30,8 +30,7 @@ window.copyCode = copyCode;
 window.startGame = startGame;
 window.endGame = endGame;
 window.clickBuzzer = clickBuzzer;
-
-document.addEventListener('keydown', move);
+window.resetBuzzer = resetBuzzer;
 
 // instantiate the Ably library
 // authenticate via Token Auth strategy
@@ -199,21 +198,6 @@ function handleNewPlayerJoined(newPlayerState, playerId) {
   );
 }
 
-// method to handle keydown events
-function move(e) {
-  const playerPosition = utilsModule.calculateAndMovePlayer(
-    e,
-    playerVars.localGameState[playerVars.myClientId].left,
-    playerVars.localGameState[playerVars.myClientId].top
-  );
-  if (playerPosition[0]) {
-    channelInstances.myPublishChannel.publish('player-state', {
-      left: playerPosition[1],
-      top: playerPosition[2]
-    });
-  }
-}
-
 // method to start the game
 // only game hosts have this button
 function startGame() {
@@ -235,6 +219,15 @@ function endGame() {
 function clickBuzzer() {
   channelInstances.myPublishChannel.publish('player-clicked', {
     clickedPlayerId: playerVars.myClientId
+  });
+}
+
+// method to reset the buzzer
+// only game hosts have this button
+function resetBuzzer() {
+  alert('reset buzzer not working yet... go nag solene to fix it')
+  channelInstances.myPublishChannel.publish('reset-buzzer', {
+    //
   });
 }
 
