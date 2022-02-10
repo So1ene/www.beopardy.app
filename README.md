@@ -3,6 +3,7 @@
 #### How to play: ####
 - Create a lobby or join a friend's lobby. Call each other (on discord, zoom, slack, etc) to play a trivia game together!
 - Everyone can press the buzzer once, and the first one to press it may answer the question. If they get it wrong, the second one to press it can answer, and so on.
+- Or you can make your own rules, up to you to decide!
 - For the next question, the host can reset the buzzer and the players will be able to click on it again.
 
 #### Preview online: ####
