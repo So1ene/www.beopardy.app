@@ -1,3 +1,7 @@
+Preview online: https://beopardy.glitch.me/
+
+Preview on local:
+- Make an ably.com account and create an api key
 - Copy `.env.example` to `.env` and change the `ABLY_API_KEY`
 - Run `npm install`
 - Run `npm start`
