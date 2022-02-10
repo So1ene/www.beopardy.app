@@ -16,6 +16,7 @@
  const playerChannels = {};
  let isGameOn = false;
  let isGameOver = false;
+ let gameRound = 1;
  let totalPlayers = 0;
  const gameRoomChName = workerData.hostRoomCode + ':primary';
  const roomCode = workerData.hostRoomCode;
@@ -47,7 +48,8 @@
        roomCode: roomCode,
        totalPlayers: totalPlayers,
        isGameOn: isGameOn,
-       isGameOver: isGameOver
+       isGameOver: isGameOver,
+       gameRound: gameRound
      });
  
      // start publishing game updates as soon as the
@@ -138,7 +140,8 @@
          globalPlayersState: globalPlayersState,
          totalPlayers: totalPlayers,
          isGameOn: isGameOn,
-         isGameOver: isGameOver
+         isGameOver: isGameOver,
+         gameRound: gameRound
        });
      }
    }, GAME_STATE_PUBLISH_FREQ_MS);
@@ -167,7 +170,8 @@
            roomCode: roomCode,
            totalPlayers: totalPlayers,
            isGameOn: isGameOn,
-           isGameOver: isGameOver
+           isGameOver: isGameOver,
+           gameRound: gameRound
          });
        }
      });
@@ -178,7 +182,11 @@
        }
      });
      playerChannel.subscribe('reset-buzzer', (msg) => {
-      //
+      gameRound = gameRound + 1;
+      for (const item in globalPlayersState) {
+        globalPlayersState[item].notClicked = true;
+        globalPlayersState[item].gameRound = gameRound;
+      }
      });
    }
  }

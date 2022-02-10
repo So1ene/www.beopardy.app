@@ -7,6 +7,7 @@ const playerVars = {
   myClientId: '',
   localGameState: {},
   isGameOn: false,
+  gameRound: 1,
   totalPlayers: 1,
   endGameClicked: false,
   myNickname: localStorage.getItem('nickname'),
@@ -111,6 +112,10 @@ function receiveGlobalGameState() {
     } else {
       endGameAndCleanup(msg.data.isGameOn);
     }
+    if (msg.data.gameRound > playerVars.gameRound) {
+      renderModule.updateGameNewsList('', `---- Buzzer has been reset (round ${msg.data.gameRound}) ----`);
+      playerVars.gameRound = msg.data.gameRound;
+    }
   });
 }
 
@@ -159,7 +164,8 @@ function endGameAndCleanup(isGlobalGameOn) {
 
 // method to update the UI as per player state
 function handlePlayerStateUpdate(globalState, playerId) {
-  const { notClicked, nickname } = globalState;
+  const { notClicked, nickname, gameRound } = globalState;
+  
   if (notClicked) {
     playerVars.localGameState[playerId] = {
       ...globalState
@@ -225,9 +231,8 @@ function clickBuzzer() {
 // method to reset the buzzer
 // only game hosts have this button
 function resetBuzzer() {
-  alert('reset buzzer not working yet... go nag solene to fix it')
   channelInstances.myPublishChannel.publish('reset-buzzer', {
-    //
+    gameRound: true
   });
 }
 
