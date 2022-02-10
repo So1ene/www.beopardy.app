@@ -85,7 +85,6 @@
    gameRoomChannel.presence.subscribe('leave', (player) => {
      const leavingPlayerId = player.clientId;
      totalPlayers--;
-     globalPlayersState[leavingPlayerId].isConnected = false;
      /**
       * optionally let the main thread know the
       * number of players

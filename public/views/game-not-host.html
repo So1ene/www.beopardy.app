@@ -60,6 +60,9 @@
       <br />
       <br />
       <br />
+      <button onclick="leaveGame()" class="btn btn-primary">
+        Leave game
+      </button>
       <!-- <button class="btn btn-primary" onclick="leaveGame()">Leave game</button> -->
       <div class="card text-center game-updates-card">
         <div class="card-header">Game updates</div>
@@ -87,5 +90,10 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function leaveGame() {
+        window.location.replace("/");
+      }
+    </script>
   </body>
 </html>
