@@ -31,13 +31,10 @@ input {
   width: 100px;
 }
 
-.container {
-  text-align: center;
-}
-
 .room-input {
   display: inline-block;
   width: 50%;
+  min-width: 320px;
   padding: 20px;
   text-align: center;
 }
@@ -71,12 +68,14 @@ input {
 
 .host-info {
   width: 50%;
-  margin: 180px 90px;
+  min-width: 320px;
+  margin: 90px;
 }
 
 .player-info {
   width: 50%;
-  margin: 150px 90px;
+  min-width: 320px;
+  margin: 90px;
 }
 
 .players-list {
@@ -91,6 +90,7 @@ input {
 
 .waiting {
   width: 50%;
+  min-width: 320px;
   margin: 150px auto;
   max-height: 440px;
 }
@@ -144,13 +144,42 @@ input {
 }
 
 .game-updates-list {
-  height: 150px;
+  height: 440px;
   max-height: 440px;
   overflow-y: auto;
 }
 
 .game-updates-card {
   width: 50%;
+  min-width: 320px;
   margin: 60px auto;
-  max-height: 180px;
+  max-height: 440px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .host-info, .player-info {
+    margin: 0;
+    width: 80%
+  }
+
+  .host-game {
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 0;
+    justify-content: center;
+  }
+
+  .game-updates-card, .room-input {
+    width: 80%;
+  }
+
+  .list-group-item, .nav-link {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .room-input {
+    width: 100%;
+  }
 }

@@ -11,44 +11,42 @@
   </head>
   <body>
     <div class="content">
-      <div class="container">
 
-        <h1> 🅱️eopardy </h1>
+      <h1> 🅱️eopardy </h1>
 
-        <div class="room-input">
-          <div class="card text-center">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-flex" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="launch-tab" data-toggle="tab" href="#launch" role="tab" aria-controls="launch" aria-selected="false">Create a game room</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="join-tab" data-toggle="tab" href="#join" role="tab" aria-controls="join" aria-selected="true">Join a game room</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="launch" role="tabpanel" aria-labelledby="launch-tab">
-                  <div id="create-tab" class="card-body">
-                    <form id="create-form">
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="create-nickname" placeholder="Enter a nickname" required="true" />
-                      </div>
-                      <button id="btn-create" class="btn btn-primary" type="submit"> GO </button>
-                    </form>
-                  </div>
+      <div class="room-input">
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-flex" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="launch-tab" data-toggle="tab" href="#launch" role="tab" aria-controls="launch" aria-selected="false">Create a game room</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="join-tab" data-toggle="tab" href="#join" role="tab" aria-controls="join" aria-selected="true">Join a game room</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade" id="launch" role="tabpanel" aria-labelledby="launch-tab">
+                <div id="create-tab" class="card-body">
+                  <form id="create-form">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="create-nickname" placeholder="Enter a nickname" required="true" />
+                    </div>
+                    <button id="btn-create" class="btn btn-primary" type="submit"> GO </button>
+                  </form>
                 </div>
-                <div class="tab-pane fade show active" id="join" role="tabpanel" aria-labelledby="join-tab">
-                  <div class="card-body">
-                    <form id="join-form">
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="join-nickname" required="true" placeholder="Enter a nickname" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="join-room-code" required="true" placeholder="Enter room code" />
-                      </div>
-                      <button id="btn-join" class="btn btn-primary" type="submit"> JOIN </button>
-                    </form>
-                  </div>
+              </div>
+              <div class="tab-pane fade show active" id="join" role="tabpanel" aria-labelledby="join-tab">
+                <div class="card-body">
+                  <form id="join-form">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="join-nickname" required="true" placeholder="Enter a nickname" />
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="join-room-code" required="true" placeholder="Enter room code" />
+                    </div>
+                    <button id="btn-join" class="btn btn-primary" type="submit"> JOIN </button>
+                  </form>
                 </div>
               </div>
             </div>
