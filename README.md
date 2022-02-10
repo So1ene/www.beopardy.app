@@ -1,3 +1,5 @@
+# 🅱️eopardy #
+
 ## An online buzzer game for trivia nights with friends. ##
 
 #### How to play: ####
