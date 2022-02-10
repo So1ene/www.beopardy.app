@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="/views/style.css" />
 
-    <title>My multiplayer game</title>
+    <title>🅱️eopardy</title>
 
     <script
       lang="text/javascript"
@@ -34,6 +34,11 @@
     <div id="alert-host" class="alert alert-danger" role="alert">
       You've ended this game, you'll be redirected to the homepage now...
     </div>
+    
+    <h1>
+      🅱️eopardy
+    </h1>
+
     <div id="host-waiting">
       <div class="host-game">
         <div class="host-info">
@@ -68,7 +73,7 @@
         </div>
         <div class="player-info">
           <div class="card">
-            <div class="card-header">Players' join / leave updates</div>
+            <div class="card-header">Activity Log</div>
             <ul
               id="host-players-list"
               class="players-list list-group list-group-flush"
@@ -77,27 +82,19 @@
         </div>
       </div>
     </div>
+    
     <div id="host-gameplay" class="host-gameplay">
-      <div class="player-color">
-        <div class="player-text">
-          <p>You are</p>
-        </div>
-        <div id="player-color-indicator" class="player-color-block"></div>
-        <div class="player-text">
-          <p id="player-room-info">&nbsp;</p>
-        </div>
-      </div>
-
-      <p>Use arrow keys to move your block around the game area</p>
-      <div id="game-area" class="game-area card text-center"></div>
-      <div>
-        <button onclick="clickBuzzer()" class="btn btn-primary">
-          Fake your player's death
-        </button>
-        <button onclick="endGame()" class="btn btn-primary">
-          End the game
-        </button>
-      </div>
+      <br />
+      <br />
+      <button onclick="clickBuzzer()" class="btn btn-buzzer">
+        Buzzer
+      </button>
+      <br />
+      <br />
+      <br />
+      <button onclick="endGame()" class="btn btn-primary">
+        End the game
+      </button>
       <div class="card text-center game-updates-card">
         <div class="card-header">Game updates</div>
         <ul

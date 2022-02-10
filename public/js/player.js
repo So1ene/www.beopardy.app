@@ -139,15 +139,6 @@ function updateLocalState(msgData) {
       handleNewPlayerJoined(msgData.globalPlayersState[item], item);
     }
   }
-
-  // call a method to update the game display as per latest state
-  renderModule.updateGameDisplay(
-    playerVars.localGameState,
-    playerVars.myGameRoomCode,
-    playerVars.myClientId,
-    playerVars.myNickname,
-    playerVars.amIHost
-  );
 }
 
 // method to end the game and detach from channels
@@ -169,21 +160,19 @@ function endGameAndCleanup(isGlobalGameOn) {
 
 // method to update the UI as per player state
 function handlePlayerStateUpdate(globalState, playerId) {
-  const { isAlive, nickname } = globalState;
-  if (isAlive) {
+  const { notClicked, nickname } = globalState;
+  if (notClicked) {
     playerVars.localGameState[playerId] = {
       ...globalState
     };
-  } else if (!isAlive && playerVars.localGameState[playerId].isAlive) {
-    playerVars.localGameState[playerId].isAlive = false;
-    renderModule.updateGameNewsList(nickname, 'clicked on the buzzer.');
-    renderModule.blinkAndRemovePlayer(playerId);
+  } else if (!notClicked && playerVars.localGameState[playerId].notClicked) {
+    playerVars.localGameState[playerId].notClicked = false;
+    renderModule.updateGameNewsList(nickname, 'clicked the buzzer');
   }
 }
 
 // method to handle a player leaving the game
 function handleExistingPlayerLeft(nickname, playerId) {
-  renderModule.blinkAndRemovePlayer(playerId);
   if (!playerVars.isGameOn) {
     renderModule.updatePresenceList(
       nickname,
@@ -241,11 +230,11 @@ function endGame() {
   });
 }
 
-// method to fake death
+// method to click buzzer
 // all players have this button
 function clickBuzzer() {
-  channelInstances.myPublishChannel.publish('player-dead', {
-    deadPlayerId: playerVars.myClientId
+  channelInstances.myPublishChannel.publish('player-clicked', {
+    clickedPlayerId: playerVars.myClientId
   });
 }
 

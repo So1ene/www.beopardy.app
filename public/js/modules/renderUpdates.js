@@ -1,46 +1,6 @@
 /* eslint-disable require-jsdoc */
 'use strict';
 const playerDivs = {};
-const gameAreaParentDiv = document.getElementById('game-area');
-
-// method to update the game display
-function updateGameDisplay(
-  localGameState,
-  myGameRoomCode,
-  myClientId,
-  myNickname,
-  amIHost
-) {
-  // loop through all the players in the local game state
-  // associative array and create or move their block as per their latest positon
-  for (const item in localGameState) {
-    if (!playerDivs[item] && localGameState[item].isAlive) {
-      playerDivs[item] = {};
-      playerDivs[item].el = document.createElement('div');
-      playerDivs[item].el.classList.add('player-block');
-      gameAreaParentDiv.appendChild(playerDivs[item].el);
-      playerDivs[item].el.style.left = localGameState[item].left + 'px';
-      playerDivs[item].el.style.top = localGameState[item].top + 'px';
-      playerDivs[item].el.style.backgroundColor = localGameState[item].color;
-      if (item === myClientId) {
-        document.getElementById(
-          'player-color-indicator'
-        ).style.backgroundColor = localGameState[item].color;
-        document.getElementById('player-room-info').innerHTML =
-          '&nbsp in &ldquo;' +
-          myGameRoomCode +
-          '&rdquo; with clientId &ldquo;' +
-          myClientId +
-          '&rdquo; and nickname &ldquo;' +
-          myNickname +
-          '&rdquo;';
-      }
-    } else if (playerDivs[item]) {
-      playerDivs[item].el.style.left = localGameState[item].left + 'px';
-      playerDivs[item].el.style.top = localGameState[item].top + 'px';
-    }
-  }
-}
 
 // method to add presence updates to a list
 function updatePresenceList(playerNickname, update, amIHost, totalPlayers) {
@@ -64,23 +24,6 @@ function updateGameNewsList(playerNickname, update) {
   const listEl = document.getElementById('game-updates-list');
   listEl.innerHTML += listItem;
   listEl.scrollTop = listEl.scrollHeight;
-}
-
-// method to add a blink effect adn remove the player from the game area
-// and the associative array
-function blinkAndRemovePlayer(playerId) {
-  let blinkCount = 0;
-  const blinkInterval = setInterval(function () {
-    if (blinkCount >= 5) {
-      gameAreaParentDiv.removeChild(playerDivs[playerId].el);
-      delete playerDivs[playerId];
-      clearInterval(blinkInterval);
-    } else {
-      playerDivs[playerId].el.style.display =
-        playerDivs[playerId].el.style.display === 'none' ? '' : 'none';
-      blinkCount++;
-    }
-  }, 250);
 }
 
 function showGameArea(amIHost) {
@@ -108,10 +51,8 @@ function showRoomCodeToShare(roomCode) {
 }
 
 export {
-  updateGameDisplay,
   updatePresenceList,
   updateGameNewsList,
-  blinkAndRemovePlayer,
   showGameArea,
   showEndGameAlert,
   showRoomCodeToShare
