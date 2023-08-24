@@ -1,0 +1,37 @@
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.cursor-icon svg {
+  margin-right: 4px;
+  vertical-align: top;
+}
+
+.announce-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  user-select: none;
+}
+
+.announce-button.button-cooldown {
+  background-color: #ccc;
+  color: #888;
+  cursor: default;
+  pointer-events: none;
+}
+
+#chatForm button, #copyToClipboard {
+  user-select: none;
+}
