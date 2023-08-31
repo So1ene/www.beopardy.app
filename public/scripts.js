@@ -115,8 +115,9 @@
         socket = new WebSocket(`${wsUrl}/start_web_socket`);
 
         socket.onopen = () => {
-          document.getElementById("connecting").remove();
           socket.send(JSON.stringify({ event: 'join-room', username, roomId, cursorColor }));
+          document.getElementById("connecting").remove();
+          document.querySelector('main').classList.add('connected');
           document.getElementById("chatroom").classList.remove('hidden');
           document.getElementById("announceButton").classList.remove("hidden");
           displayRoomId(roomId);

@@ -2,13 +2,6 @@
   display: none;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f4f4f4;
-}
-
 .cursor-icon svg {
   margin-right: 4px;
   vertical-align: top;
@@ -34,4 +27,90 @@ body {
 
 #chatForm button, #copyToClipboard {
   user-select: none;
+}
+
+.cursor-icon {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-shadow: -1px -1px 1px #f4f4f4ee, 1px -1px 1px #f4f4f4ee, -1px 1px 1px #f4f4f4ee, 1px 1px 1px #f4f4f4ee;
+}
+
+.cursor-icon svg {
+  filter: drop-shadow(-1px -1px 1px #f4f4f4aa) drop-shadow(1px -1px 1px #f4f4f4aa) drop-shadow(-1px 1px 1px #f4f4f4aa) drop-shadow(1px 1px 1px #f4f4f4aa)
+}
+
+body {
+  margin: 0;
+  padding: 80px 80px 0 80px;
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(143,144,236,1) 43%, rgba(143,144,236,1) 47%, rgba(206,166,243,1) 56%, rgba(100,96,239,1) 100%);
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  border-radius: 80px 80px 0 0;
+  border: 4px solid white;
+  border-bottom: 0;
+  box-sizing: border-box;
+  padding: 80px;
+  margin: 0;
+  min-height: calc(100vh - 80px);
+  color: white;
+}
+
+main.connected {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: black;
+}
+
+main h1 {
+  margin: 0;
+  font-size: 64px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#joinRoomForm {
+  max-width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 1010px) {
+  body {
+    padding: 50px 50px 0 50px;
+  }
+
+  main {
+    border-radius: 50px 50px 0 0;
+    padding: 50px;
+    min-height: calc(100vh - 50px);
+  }
+
+  main h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 600px), (max-height: 600px) {
+  body {
+    padding: 20px 20px 0 20px;
+  }
+
+  main {
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    min-height: calc(100vh - 20px);
+  }
+
+  main h1 {
+    font-size: 40px;
+  }
 }

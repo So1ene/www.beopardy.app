@@ -9,49 +9,66 @@
     <link rel="canonical" href="https://beopardy.app/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <h1>🅱️eopardy </h1>
-    <div id="lobby">
-      <form id="joinRoomForm">
-        Enter a Username: <input id="username" placeholder="Enter username" required />
-        <br>
-        <br>
-        <label for="cursorColor">Choose a color:</label>
-        <input type="color" id="cursorColor" name="cursorColor" value="#ff0000">
-        <br>
-        <br>
-        <br>
-        <br>
-        Create a Room: <button id="createRoomButton" type="button">Create Room</button>
-        <br>
-        <br>
-        or join a Room: <input id="joinRoomId" placeholder="Enter room ID" required />
-        <button type="submit">Join</button>
-      </form>
-    </div>
-    <div id="connecting" class="hidden">
-      Connecting...
-    </div>    
-    <div id="chatroom" class="hidden">
-      <div id="roomIdDisplay"></div>
-      <div>
-        <hr />
-        <b>Connected Users:</b>
-        <br>
-        <div id="users"></div>
-        <hr class="visible-xs visible-sm" />
-      </div>
-      <button id="announceButton" class="announce-button hidden">Buzzer</button>
-      <div>
-        <form id="chatForm">
-          <input id="data" placeholder="send message" maxlength="560" />
-          <button type="submit">&#8594;</button>
+    <main>
+      <h1>🅱eopardy </h1>
+      <div id="lobby">
+        <form id="joinRoomForm">
+          <fieldset>
+              <div>
+                <input type="radio" name="joinOrCreate" id="create" value="create">
+                <label for="create">Create a game room</label>
+              </div>
+              <div>
+                <input type="radio" name="joinOrCreate" id="join" value="join" checked>
+                <label for="join">Join a game room</label>
+              </div>
+            </fieldset>
+          <fieldset>
+            <label for="username">Enter a Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required />
+          </fieldset>
+          <fieldset>
+            <label for="cursorColor">Choose a color:</label>
+            <input type="color" id="cursorColor" name="cursorColor" value="#ff0000">
+          </fieldset>
+          <fieldset>
+            <label for="roomID">Enter the room code:</label>
+            <input type="text" id="roomID" name="roomID" placeholder="Room ID" required />
+          </fieldset>
+          <button type="submit">Join Room</button>
+          <button id="createRoomButton" type="button">Create Room</button>
         </form>
-        <hr />
-        <div id="conversation"></div>
-      </div>   
-    </div>
+      </div>
+      <div id="connecting" class="hidden">
+        Connecting...
+      </div>    
+      <div id="chatroom" class="hidden">
+        <div id="roomIdDisplay"></div>
+        <div>
+          <hr />
+          <b>Connected Users:</b>
+          <br>
+          <div id="users"></div>
+          <hr class="visible-xs visible-sm" />
+        </div>
+        <button id="announceButton" class="announce-button hidden">Buzzer</button>
+        <div>
+          <form id="chatForm">
+            <input id="data" placeholder="send message" maxlength="560" />
+            <button type="submit">&#8594;</button>
+          </form>
+          <hr />
+          <div id="conversation"></div>
+        </div>   
+      </div>
+    </main>
     <div id="cursors"></div>
     <script src="/scripts.js"></script>
   </body>
