@@ -1,11 +1,7 @@
-.hidden {
-  display: none;
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   background-color: #f4f4f4;
 }
 
@@ -34,4 +30,61 @@ body {
 
 #chatForm button, #copyToClipboard {
   user-select: none;
+}
+
+.infobox {
+  padding: 10px;
+  width: 50%;
+}
+
+.chat {
+  height: 100%;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.chat .chatbox {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.chat .chatbox > div,
+#users > div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.connected {
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.chat form input {
+  width: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+.system {
+  font-weight: 700;
+  font-style: italic;
 }

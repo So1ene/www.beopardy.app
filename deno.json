@@ -1,0 +1,23 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env server.js",
+    "dev": "deno run --allow-net --allow-read --allow-env --watch=server.js,public/ server.js",
+    "install": "rm -rf .cache/deno"
+  },
+  "watch": {
+    "restart": {
+      "include": [
+        "\\.ts$",
+        "\\.js$",
+        "public/.*\\.js$"
+      ]
+    },
+    "install": {
+      "exclude": [
+        "\\.html$",
+        "\\.css$"
+      ]
+    },
+    "throttle": 500
+  }
+}

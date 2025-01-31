@@ -118,6 +118,7 @@
           document.getElementById("connecting").remove();
           socket.send(JSON.stringify({ event: 'join-room', username, roomId, cursorColor }));
           document.getElementById("chatroom").classList.remove('hidden');
+          document.getElementById("chat").classList.remove('hidden');
           document.getElementById("announceButton").classList.remove("hidden");
           displayRoomId(roomId);
         };
@@ -203,7 +204,7 @@
         messageSpan.style.color = cursorColor;
       
         if (isSystem) {
-          messageSpan.style.fontStyle = "italic";
+          messageSpan.classList.add("system");
         } else {
           const usernameSpan = document.createElement("b");
           usernameSpan.textContent = username + ": ";
@@ -213,6 +214,7 @@
       
         messageDiv.appendChild(messageSpan);
         conversationDiv.appendChild(messageDiv);
+        conversationDiv.scrollTop = conversationDiv.scrollHeight;
       }  
       
       function updateCursors(userCursors) {

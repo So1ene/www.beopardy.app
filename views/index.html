@@ -11,48 +11,53 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
-    <h1>🅱️eopardy </h1>
-    <div id="lobby">
-      <form id="joinRoomForm">
-        Enter a Username: <input id="username" placeholder="Enter username" required />
-        <br>
-        <br>
-        <label for="cursorColor">Choose a color:</label>
-        <input type="color" id="cursorColor" name="cursorColor" value="#ff0000">
-        <br>
-        <br>
-        <br>
-        <br>
-        Create a Room: <button id="createRoomButton" type="button">Create Room</button>
-        <br>
-        <br>
-        or join a Room: <input id="joinRoomId" placeholder="Enter room ID" required />
-        <button type="submit">Join</button>
-      </form>
-    </div>
-    <div id="connecting" class="hidden">
-      Connecting...
-    </div>    
-    <div id="chatroom" class="hidden">
-      <div id="roomIdDisplay"></div>
-      <div>
-        <hr />
-        <b>Connected Users:</b>
-        <br>
-        <div id="users"></div>
-        <hr class="visible-xs visible-sm" />
+    <div class="container">
+      <div class="infobox">
+        <h1>🅱️eopardy </h1>
+        <div id="lobby">
+          <form id="joinRoomForm">
+            Enter a Username: <input id="username" placeholder="Enter username" required />
+            <br>
+            <br>
+            <label for="cursorColor">Choose a color:</label>
+            <input type="color" id="cursorColor" name="cursorColor" value="#ff0000">
+            <br>
+            <br>
+            <br>
+            <br>
+            Create a Room: <button id="createRoomButton" type="button">Create Room</button>
+            <br>
+            <br>
+            or join a Room: <input id="joinRoomId" placeholder="Enter room ID" required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+        <div id="connecting" class="hidden">
+          Connecting...
+        </div>    
+        <div id="chatroom" class="hidden">
+          <div id="roomIdDisplay"></div>
+          <hr />
+          <button id="announceButton" class="announce-button hidden">Buzzer</button>
+          <div>
+            <hr />
+            <div class="connected">Connected Users:</div>
+            <br />
+            <div id="users"></div>
+          </div>
+        </div>
+        <div id="cursors"></div>
+        <script src="/scripts.js"></script>
       </div>
-      <button id="announceButton" class="announce-button hidden">Buzzer</button>
-      <div>
-        <form id="chatForm">
-          <input id="data" placeholder="send message" maxlength="560" />
-          <button type="submit">&#8594;</button>
-        </form>
-        <hr />
-        <div id="conversation"></div>
-      </div>   
+      <div class="chat hidden" id="chat">
+        <div id="conversation" class="chatbox"></div>
+        <div class="typingbox"><hr />
+          <form id="chatForm">
+            <input id="data" placeholder="send message" maxlength="560" />
+            <button type="submit">&#8594;</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div id="cursors"></div>
-    <script src="/scripts.js"></script>
   </body>
 </html>
