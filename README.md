@@ -27,9 +27,3 @@ Features:
 
 #### Preview online: ####
 - https://beopardy.glitch.me/
-
-#### Preview on local: ####
-- Run `npm install`
-- Run `npm start`
-
-
