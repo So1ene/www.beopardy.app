@@ -14,18 +14,10 @@
 - https://beopardy.glitch.me/
 
 #### Preview on local: ####
-- Make an ably.com account and create an api key
-- Copy `.env.example` to `.env` and change the `ABLY_API_KEY`
 - Run `npm install`
 - Run `npm start`
-- Open your browser on `http://localhost:5000/`
-
 
 #### Stack: ####
 
-- [Node JS](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
+- [Node JS](https://nodejs.org/en/)'s new version: [Deno](https://deno.com/)
 - [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Ably Realtime](https://www.ably.io)
-- [Bootstrap](https://getbootstrap.com/)
-- [DotEnv](https://www.npmjs.com/package/dotenv)
