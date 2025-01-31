@@ -11,6 +11,10 @@ Features:
 - Real-time buzzer clicked for everyone at the same time
 - Real-time cursor movement tracking
 - Choose a color for your cursor
+  
+- [Node JS](https://nodejs.org/en/)'s new version: [Deno](https://deno.com/)
+- [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- Websockets
 
 (This is only version 1, where there is no front-end design yet.) 
 
@@ -28,7 +32,4 @@ Features:
 - Run `npm install`
 - Run `npm start`
 
-#### Stack: ####
 
-- [Node JS](https://nodejs.org/en/)'s new version: [Deno](https://deno.com/)
-- [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
