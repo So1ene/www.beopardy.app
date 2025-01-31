@@ -1,6 +1,5 @@
 # 🅱️eopardy 1.0 #
 
-(This is only version 1, where there is no front-end design yet.) 
 
 ## An online buzzer game for trivia nights with friends. ##
 
@@ -12,6 +11,9 @@ Features:
 - Real-time buzzer clicked for everyone at the same time
 - Real-time cursor movement tracking
 - Choose a color for your cursor
+
+(This is only version 1, where there is no front-end design yet.) 
+
 
 #### How to play: ####
 - Create a lobby or join a friend's lobby. Call each other (on discord, zoom, slack, etc) to play a trivia game together!
